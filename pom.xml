@@ -14,6 +14,7 @@
 
   Copyright 2010–2011 ApexIdentity Inc.
   Portions Copyright 2011-2015 ForgeRock AS.
+  Portions Copyright 2017 Wren Security
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -26,13 +27,13 @@
   <artifactId>forgerock-http-framework</artifactId>
   <version>3.0.1</version>
   <packaging>pom</packaging>
-  <name>Commons HTTP Framework</name>
+  <name>Wren Commons HTTP Framework</name>
   <description>
        The HTTP framework provides a uniform client/server HTTP API, which is
        script friendly, and includes adapters for various common HTTP libraries
        such as Servlet, Apache HTTP Clients, and Grizzly.
   </description>
-  <url>http://commons.forgerock.org/forgerock-http-framework</url>
+  <url>http://wrensecurity.org/</url>
   <modules>
     <module>http-core</module>
     <module>http-servlet</module>
@@ -75,47 +76,63 @@
   </dependencyManagement>
   <repositories>
     <repository>
-      <id>forgerock-staging-repository</id>
-      <name>ForgeRock Release Repository</name>
-      <url>http://maven.forgerock.org/repo/releases</url>
+      <id>bintray-wrensecurity-releases</id>
+      <name>Wren Security Release Repository</name>
+      <url>http://dl.bintray.com/wrensecurity/releases</url>
+
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
+
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+
+    <repository>
+      <id>bintray-wrensecurity-snapshots</id>
+      <name>Wren Security Snapshot Repository</name>
+      <url>http://dl.bintray.com/wrensecurity/snapshots</url>
+
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+
+      <releases>
+        <enabled>false</enabled>
+      </releases>
     </repository>
   </repositories>
   <issueManagement>
-    <system>jira</system>
-    <url>https://bugster.forgerock.org/jira/browse/CHF</url>
+    <system>GitHub Issues</system>
+    <url>https://github.com/WrenSecurity/wrensec-http-framework/issues</url>
   </issueManagement>
   <licenses>
     <license>
       <name>CDDL-1.0</name>
       <url>http://www.opensource.org/licenses/CDDL-1.0</url>
       <comments>Common Development and Distribution License (CDDL) 1.0.
-            This license applies to OpenIG source code as indicated in the
-            source code.</comments>
-      <distribution>repo</distribution>
-    </license>
-    <license>
-      <name>CC BY-NC-ND 3.0</name>
-      <url>http://creativecommons.org/licenses/by-nc-nd/3.0/</url>
-      <comments>Creative Commons Attribution-NonCommercial-NoDerivs 3.0
-            Unported. This license applies to the site content, and to the
-            documentation as indicated in the documentation source code.</comments>
+        This license applies to all source code in this repo, as indicated
+        in file headers.</comments>
       <distribution>repo</distribution>
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:ssh://git@stash.forgerock.org:7999/commons/forgerock-http-framework.git</connection>
-    <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/commons/forgerock-http-framework.git</developerConnection>
-    <url>http://stash.forgerock.org/projects/COMMONS/repos/forgerock-http-framework/browse</url>
-    <tag>3.0.1</tag>
+    <url>https://github.com/WrenSecurity/wrensec-http-framework</url>
+    <connection>scm:git:git://github.com/WrenSecurity/wrensec-http-framework.git</connection>
+    <developerConnection>scm:git:git@github.com:WrenSecurity/wrensec-http-framework.git</developerConnection>
   </scm>
   <distributionManagement>
-    <site>
-      <id>forgerock.org</id>
-      <name>ForgeRock Community</name>
-      <url>scp://forgerock.org/var/www/vhosts/commons.forgerock.org/httpdocs/forgerock-http-framework</url>
-    </site>
+    <snapshotRepository>
+      <id>bintray-wrensecurity-releases</id>
+      <name>Wren Security Snapshot Repository</name>
+      <url>${forgerockDistMgmtSnapshotsUrl}/wrensec-http-framework/;publish=1</url>
+    </snapshotRepository>
+
+    <repository>
+      <id>bintray-wrensecurity-snapshots</id>
+      <name>Wren Security Release Repository</name>
+      <url>${forgerockDistMgmtReleasesUrl}/wrensec-http-framework/;publish=1</url>
+    </repository>
   </distributionManagement>
 </project>
