@@ -1,0 +1,3 @@
+export MAVEN_PACKAGE="forgerock-http-framework"
+export BINTRAY_PACKAGE="wrensec-http-framework"
+export JFROG_PACKAGE="org/forgerock/http/forgerock-http-framework"
