@@ -34,10 +34,6 @@
        such as Servlet, Apache HTTP Clients, and Grizzly.
   </description>
   <url>http://wrensecurity.org/</url>
-  <properties>
-    <!-- FIXME: Needed for POM-less com.google.inject:guice:jar:no_aop:3.0 -->
-    <pgpVerifyPluginVersion>1.2.0-SNAPSHOT</pgpVerifyPluginVersion>
-  </properties>
   <modules>
     <module>http-core</module>
     <module>http-servlet</module>
